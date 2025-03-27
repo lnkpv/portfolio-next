@@ -99,6 +99,10 @@ button > svg {
   color: var(--color-accent-yellow);
 }
 
+/* button > svg.lucide-folder {
+  color: var(--color-accent-purple);
+} */
+
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -144,4 +148,8 @@ button > svg {
 
 body {
   font-family: var(--font-montserrat);
+}
+
+#github > g {
+  fill: var(--foreground);
 }

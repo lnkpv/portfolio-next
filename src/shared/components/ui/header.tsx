@@ -9,7 +9,7 @@ function Header({ text, align = "left" }: HeaderProps) {
   return (
     <div
       className={cn(
-        "text-5xl mb-[6vh] font-bold",
+        "text-5xl mb-[4vh] font-bold",
         align === "center" && "text-center",
         align === "right" && "text-right"
       )}

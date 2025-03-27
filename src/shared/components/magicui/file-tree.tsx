@@ -216,15 +216,19 @@ const Folder = forwardRef<
   HTMLDivElement,
   FolderProps & React.HTMLAttributes<HTMLDivElement>
 >(
-  ({
-    className,
-    element,
-    value,
-    isSelectable = true,
-    isSelect,
-    children,
-    ...props
-  }) => {
+  (
+    {
+      className,
+      element,
+      value,
+      isSelectable = true,
+      isSelect,
+      children,
+      ...props
+    },
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    ref
+  ) => {
     const {
       direction,
       handleExpand,
@@ -243,7 +247,7 @@ const Folder = forwardRef<
       >
         <AccordionPrimitive.Trigger
           className={cn(
-            `flex items-center gap-1 rounded-md text-sm`,
+            `flex items-center gap-1 rounded-md text-md`,
             className,
             {
               "bg-muted rounded-md": isSelect && isSelectable,
@@ -259,7 +263,7 @@ const Folder = forwardRef<
             : closeIcon ?? <FolderIcon className="size-4" />}
           <span>{element}</span>
         </AccordionPrimitive.Trigger>
-        <AccordionPrimitive.Content className="relative h-full overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+        <AccordionPrimitive.Content className="relative h-full overflow-hidden text-md data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
           {element && indicator && <TreeIndicator aria-hidden="true" />}
           <AccordionPrimitive.Root
             dir={direction}
@@ -311,7 +315,7 @@ const File = forwardRef<
         type="button"
         disabled={!isSelectable}
         className={cn(
-          "flex w-fit items-center gap-1 rounded-md pr-1 text-sm duration-200 ease-in-out rtl:pl-1 rtl:pr-0",
+          "flex w-fit items-center gap-1 rounded-md pr-1 text-md duration-200 ease-in-out rtl:pl-1 rtl:pr-0",
           {
             "bg-muted": isSelected && isSelectable,
           },

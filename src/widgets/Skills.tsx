@@ -8,7 +8,7 @@ function Skills() {
       <Header text="Skills" align="center" />
       <div className="grid grid-cols-2 pt-[4vh]">
         <NeonGradientCard
-          className="max-w-sm items-center justify-center text-center mx-auto"
+          className="max-w-md items-center justify-center text-center mx-auto"
           borderSize={1}
           neonColors={{
             firstColor: "rgba(70, 3, 139, 0.5)",
@@ -18,7 +18,7 @@ function Skills() {
           <SkillsTree type="soft" />
         </NeonGradientCard>
         <NeonGradientCard
-          className="max-w-sm items-center justify-center text-center mx-auto"
+          className="max-w-md items-center justify-center text-center mx-auto"
           borderSize={1}
           neonColors={{
             firstColor: "rgba(172, 144, 11, 0.5)",

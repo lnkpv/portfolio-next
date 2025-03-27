@@ -25,7 +25,10 @@ const data: CardType[] = [
       <div className="transform-gpu text-xl h-full cursor-pointer transition-all group-hover:scale-50 duration-300">
         <div className="flex min-h-[15vh] h-full w-full items-center justify-center relative px-8 border-dotted rounded-xl border-2 transition-colors border-accent-purple text-accent-yellow group-hover:text-accent-yellow/90">
           <FilePenLineIcon size={48} />
-          <CoffeeIcon size={48} />
+          <CoffeeIcon
+            size={48}
+            className="text-foreground/70 group-hover:text-foreground/60"
+          />
           <BookTextIcon size={48} />
         </div>
       </div>
@@ -44,21 +47,25 @@ const data: CardType[] = [
       <div className="transform-gpu text-xl h-full cursor-pointer transition-all group-hover:scale-[0.6] duration-300">
         <div className="min-h-[15vh] flex h-full w-full items-center justify-center relative">
           <SparklesIcon
-            size={40}
-            className="absolute top-8 left-7 -rotate-12 text-accent-yellow"
+            size={36}
+            className="absolute top-4 left-12 -rotate-12 text-accent-yellow group-hover:text-accent-yellow/90"
           />
           <SparklesIcon
-            size={36}
-            className="absolute top-7 right-8 rotate-12 text-accent-yellow"
+            size={28}
+            className="absolute top-11 right-8 rotate-12 text-accent-yellow group-hover:text-accent-yellow/90"
           />
           <SparklesIcon
             size={32}
-            className="absolute top-2 left-1/2 -translate-x-1/2 rotate-6 text-accent-yellow"
+            className="absolute top-4 right-12 rotate-12 text-accent-purple group-hover:text-accent-purple/90"
+          />
+          <SparklesIcon
+            size={28}
+            className="absolute top-13 left-7 rotate-6 text-accent-purple group-hover:text-accent-purple/90"
           />
           <UserRound
             size={70}
             strokeWidth={1}
-            className="mt-10 text-accent-purple"
+            className="mt-10 text-foreground/70 group-hover:text-foreground/60"
           />
         </div>
       </div>
@@ -73,19 +80,31 @@ const data: CardType[] = [
   {
     title: "Technology",
     icon: (
-      <div className="cursor-pointer transform-gpu transition-all group-hover:scale-50 duration-300 leading-none justify-center flex border-dotted rounded-xl border-2 border-accent-purple text-accent-yellow group-hover:text-accent-yellow/90">
+      <div className="cursor-pointer transform-gpu transition-all group-hover:scale-50 duration-300 leading-none justify-center flex border-dotted rounded-xl border-2 border-accent-purple text-foreground/70 group-hover:text-foreground/60">
         <div className="text-lg font-medium flex flex-col py-2 transition-transform ">
-          <div className="transform hover:scale-125 transition-transform">
-            eat();
+          <div className="transform hover:scale-125 transition-transform text-foreground/70 group-hover:text-foreground/60">
+            eat
+            <span className="text-accent-yellow group-hover:text-accent-yellow/90">
+              ();
+            </span>
           </div>
           <div className="transform hover:scale-125 transition-transform">
-            code();
+            code
+            <span className="text-accent-yellow group-hover:text-accent-yellow/90">
+              ();
+            </span>
           </div>
           <div className="transform hover:scale-125 transition-transform">
-            sleep();
+            sleep
+            <span className="text-accent-yellow group-hover:text-accent-yellow/90">
+              ();
+            </span>
           </div>
           <div className="transform hover:scale-125 transition-transform">
-            repeat();
+            repeat
+            <span className="text-accent-yellow group-hover:text-accent-yellow/90">
+              ();
+            </span>
           </div>
         </div>
       </div>
@@ -112,7 +131,10 @@ const data: CardType[] = [
             size={40}
             className="absolute top-3 right-3 text-accent-purple group-hover:text-accent-purple/90"
           />
-          <FigmaIcon size={80} className="mr-28" />
+          <FigmaIcon
+            size={80}
+            className="mr-28 text-foreground/70 group-hover:text-foreground/60"
+          />
         </div>
       </div>
     ),
@@ -187,7 +209,7 @@ function Card({
               {icon}
             </div>
             <div className="text-accent-yellow text-xs mt-2">{description}</div>
-            <div className="font-semibold text-foreground text-sm -mt-1">
+            <div className="font-semibold text-foreground/80 text-sm -mt-1">
               {title}
             </div>
           </div>
