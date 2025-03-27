@@ -32,8 +32,9 @@ const data: CardType[] = [
     ),
     content: (
       <div>
+        {`
         I'm a third-year student at the Russian Presidential Academy of National
-        Economy and Public Administration, specializing in Web Development.
+        Economy and Public Administration, specializing in Web Development.`}
       </div>
     ),
   },
