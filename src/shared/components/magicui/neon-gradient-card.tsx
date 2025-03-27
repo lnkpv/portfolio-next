@@ -144,7 +144,7 @@ export const NeonGradientCard: React.FC<NeonGradientCardProps> = ({
           "dark:bg-neutral-900"
         )}
       >
-        <Noise />
+        <Noise className="rounded-[20px] overflow-clip" />
         {children}
       </div>
     </div>

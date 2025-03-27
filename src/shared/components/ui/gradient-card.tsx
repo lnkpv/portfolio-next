@@ -28,7 +28,7 @@ export const MainMenusGradientCard = ({
       className="group relative transform-gpu rounded-[20px] bg-white/10 transition-transform hover:scale-[1.01]"
       ref={parentRef}
     >
-      <Noise />
+      <Noise className="overflow-clip rounded-[20px]" type={"hero"} />
       <div className="absolute h-full  w-full overflow-hidden rounded-[20px] -z-[1]">
         <div
           className={cn(

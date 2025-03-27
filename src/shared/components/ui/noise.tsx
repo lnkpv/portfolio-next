@@ -1,11 +1,21 @@
 import { cn } from "@/shared/lib/utils";
 import Image from "next/image";
 
-const Noise = ({ className = "" }: { className?: string }) => {
+const Noise = ({
+  className,
+  type = "rounded",
+}: {
+  className?: string;
+  type?: "rounded" | "hero";
+}) => {
+  const imgStyle =
+    type === "rounded"
+      ? "h-full w-auto object-cover"
+      : "h-auto w-full object-cover";
   return (
     <div
       className={cn(
-        `absolute top-1/2 -translate-y-1/2 pointer-events-none h-full w-full opacity-[0.08] z-[1] overflow-clip`,
+        "absolute top-1/2 -translate-y-1/2 pointer-events-none h-full w-full opacity-[0.08] z-[1] overflow-clip",
         className
       )}
     >
@@ -14,25 +24,9 @@ const Noise = ({ className = "" }: { className?: string }) => {
         alt="noise"
         width={300}
         height={300}
-        className="w-full h-auto"
+        className={imgStyle}
       ></Image>
     </div>
-    // <svg
-    //   className="absolute pointer-events-none h-full w-full opacity-[0.05] z-[0]"
-    //   xmlns="http://www.w3.org/2000/svg"
-    // >
-    //   <filter id="noiseFilter">
-    //     <feTurbulence
-    //       type="fractalNoise"
-    //       baseFrequency="0.2"
-    //       numOctaves="4"
-    //       seed="15"
-    //       stitchTiles="stitch"
-    //     />
-    //   </filter>
-
-    //   <rect width="100%" height="100%" filter="url(#noiseFilter)" />
-    // </svg>
   );
 };
 

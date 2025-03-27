@@ -33,7 +33,10 @@ const Hero = ({ className }: { className: string }) => {
       </div> */}
 
       <div ref={start} className="h-[80vh] w-full relative flex items-center">
-        <Noise className="h-[55vh] top-1/2 -translate-y-1/2 z-[20]" />
+        <Noise
+          className="h-[55vh] top-1/2 -translate-y-1/2 z-[20]"
+          type="hero"
+        />
         <div className="absolute shadow-[0_0_10px_1px_rgba(30,0,59,0.8)] left-[20vw] top-[6vh] size-[155px] rounded-full overflow-clip z-[100]">
           <Image
             className="object-center object-none"
