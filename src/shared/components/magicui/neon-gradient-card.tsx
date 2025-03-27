@@ -10,6 +10,7 @@ import {
 } from "react";
 
 import { cn } from "@/shared/lib/utils";
+import Noise from "../ui/noise";
 
 interface NeonColorsProps {
   firstColor: string;
@@ -143,6 +144,7 @@ export const NeonGradientCard: React.FC<NeonGradientCardProps> = ({
           "dark:bg-neutral-900"
         )}
       >
+        <Noise />
         {children}
       </div>
     </div>

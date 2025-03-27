@@ -6,6 +6,9 @@ import React, { useEffect, useRef } from "react";
 interface LiquidChromeProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Base color as an RGB array. Default is [0.1, 0.1, 0.1]. */
   baseColor?: [number, number, number];
+  midColor?: [number, number, number];
+  thirdColor?: [number, number, number];
+  secondaryColor?: [number, number, number];
   /** Animation speed multiplier. Default is 1.0. */
   speed?: number;
   /** Amplitude of the distortion. Default is 0.6. */
@@ -20,10 +23,13 @@ interface LiquidChromeProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const LiquidChrome: React.FC<LiquidChromeProps> = ({
   baseColor = [0.1, 0.1, 0.1],
+  secondaryColor = [0.98, 0.83, 0.17],
+  thirdColor = [0.69, 0.41, 0.45],
+  midColor = [0.41, 0.0, 0.73],
   speed = 0.2,
   amplitude = 0.5,
-  frequencyX = 3,
-  frequencyY = 2,
+  frequencyX = 3.3,
+  frequencyY = 2.2,
   interactive = true,
   ...props
 }) => {
@@ -55,6 +61,9 @@ export const LiquidChrome: React.FC<LiquidChromeProps> = ({
       uniform float uTime;
       uniform vec3 uResolution;
       uniform vec3 uBaseColor;
+      uniform vec3 uMidColor;
+      uniform vec3 uThirdColor;
+      uniform vec3 uSecondaryColor;
       uniform float uAmplitude;
       uniform float uFrequencyX;
       uniform float uFrequencyY;
@@ -64,10 +73,11 @@ export const LiquidChrome: React.FC<LiquidChromeProps> = ({
       // Render function for a given uv coordinate.
       vec4 renderImage(vec2 uvCoord) {
           // Convert uvCoord (in [0,1]) to a fragment coordinate.
-          vec2 fragCoord = 0.8 * uvCoord * uResolution.xy;
+          vec2 fragCoord = 2.1 * uvCoord * uResolution.xy;
           // Map fragCoord to a normalized space.
-          vec2 uv = 1.8 + (0.8 * fragCoord - uResolution.xy) / min(uResolution.x, uResolution.y);
-
+          vec2 uv = 3.9 + (0.34 * fragCoord - uResolution.xy) / min(uResolution.x, uResolution.y);
+          uv.x -= 1.0;
+          uv.y += 0.3;
           // Iterative cosine-based distortions.
           for (float i = 1.0; i < 10.0; i++){
               uv.x += uAmplitude / i * cos(i * uFrequencyX * uv.y + uTime + uMouse.x * 3.14159 * 0.3);
@@ -82,7 +92,34 @@ export const LiquidChrome: React.FC<LiquidChromeProps> = ({
           uv += (diff / (dist + 0.0001)) * ripple * falloff;
 
           // Original vibrant color computation.
-          vec3 color = uBaseColor / abs(sin(uTime - uv.y - uv.x));
+          // vec3 color = uBaseColor / abs(sin(uTime - uv.y - uv.x));
+          // Вычисляем яркость шума (от 0 до 1) и мягко растягиваем её
+          float brightness = pow(abs(sin(uTime - uv.y - uv.x)), 3.0)*0.99;
+
+          // Два плавных перехода: от базового цвета к промежуточному, затем к вторичному
+          vec3 color;
+          // if (brightness < 0.6) {
+          //     float factor = smoothstep(0.0, 0.6, brightness); // Плавный переход от Base к Mid
+          //     color = mix(uBaseColor, uMidColor, factor);
+          // } else if (brightness < 0.7) {
+          //     float factor = smoothstep(0.6, 0.7, brightness); // Плавный переход от Mid к Secondary
+          //     color = mix(uMidColor, uThirdColor, factor);
+          // } else {
+          //     float factor = smoothstep(0.7, 1.0, brightness); // Плавный переход от Mid к Secondary
+          //     color = mix(uThirdColor, uSecondaryColor, factor);
+          // }
+
+          if (brightness < 0.6) {
+              float factor = smoothstep(0.0, 0.6, brightness); // Плавный переход от Base к Mid
+              color = mix(uBaseColor, uMidColor, factor);
+          } else if (brightness < 0.9) {
+              float factor = smoothstep(0.6, 0.9, brightness); // Плавный переход от Mid к Secondary
+              color = mix(uMidColor, uThirdColor, factor);
+          }
+              else {
+              float factor = smoothstep(0.9, 1.0, brightness); // Плавный переход от Mid к Secondary
+              color = mix(uThirdColor, uSecondaryColor, factor);
+          }
           return vec4(color, 1.0);
       }
 
@@ -116,6 +153,9 @@ export const LiquidChrome: React.FC<LiquidChromeProps> = ({
           ]),
         },
         uBaseColor: { value: new Float32Array(baseColor) },
+        uMidColor: { value: new Float32Array(midColor) },
+        uThirdColor: { value: new Float32Array(thirdColor) },
+        uSecondaryColor: { value: new Float32Array(secondaryColor) },
         uAmplitude: { value: amplitude },
         uFrequencyX: { value: frequencyX },
         uFrequencyY: { value: frequencyY },
