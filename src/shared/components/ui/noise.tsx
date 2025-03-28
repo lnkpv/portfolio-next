@@ -6,7 +6,7 @@ const Noise = ({
   type = "rounded",
 }: {
   className?: string;
-  type?: "rounded" | "hero";
+  type?: "rounded" | "hero" | "projects";
 }) => {
   const imgStyle =
     type === "rounded"
@@ -15,7 +15,8 @@ const Noise = ({
   return (
     <div
       className={cn(
-        "absolute top-1/2 -translate-y-1/2 pointer-events-none h-full w-full opacity-[0.08] z-[1] overflow-clip",
+        "absolute pointer-events-none h-full w-full opacity-[0.08] z-[1] overflow-clip",
+        type === "projects" ? "bottom-0" : "top-1/2 -translate-y-1/2",
         className
       )}
     >

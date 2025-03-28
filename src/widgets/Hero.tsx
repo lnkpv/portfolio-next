@@ -1,5 +1,6 @@
 "use client";
 
+import { TerminalDemo } from "@/shared/components/TerminalDemo";
 import DecryptedText from "@/shared/components/ui/decrypted-text";
 import LiquidChrome from "@/shared/components/ui/liquid-chrome";
 import Noise from "@/shared/components/ui/noise";
@@ -28,9 +29,9 @@ const Hero = ({ className }: { className: string }) => {
 
   return (
     <div id="home" className={className}>
-      {/* <div className="terminal h-screen flex justify-center items-center">
+      <div className="terminal h-screen flex justify-center items-center">
         <TerminalDemo />
-      </div> */}
+      </div>
 
       <div ref={start} className="h-[80vh] w-full relative flex items-center">
         <Noise

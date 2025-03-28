@@ -1,6 +1,8 @@
 "use client";
 import { MainMenusGradientCard } from "@/shared/components/ui/gradient-card";
 import Header from "@/shared/components/ui/header";
+import { content } from "@/shared/data";
+import { cn } from "@/shared/lib/utils";
 import dynamic from "next/dynamic";
 
 const AnimatedTestimonials = dynamic(
@@ -59,55 +61,40 @@ const AnimatedTestimonials = dynamic(
 // ];
 
 function Projects() {
-  const testimonials = [
-    {
-      name: "me",
-      src: "/me.webp",
-    },
-    {
-      name: "me",
-      src: "/me.webp",
-    },
-    {
-      name: "me",
-      src: "/me.webp",
-    },
-  ];
   return (
     <div id="projects">
-      <div className="mx-[15vw]">
+      <div className="max-w-[60vw] mx-auto px-8">
         <Header text={"Projects"} />
-        {`
-      Below are some of the recent projects I've had the pleasure of working on.
-      Each one represents a unique challenge and demonstrates my ability to
-      craft engaging, functional designs while ensuring a seamless user
-      experience.`}
       </div>
-      <div className="w-full max-w-[50vw] mx-auto grid relative p-2 grid-cols-1 gap-2 ">
-        <MainMenusGradientCard
-          className="p-4 h-[35vh]"
-          description="This is the best library for creating dynamic cards"
-          title="CuiCui"
-        >
-          <div className="  z-50 absolute transform h-full w-full bottom-6">
-            <AnimatedTestimonials testimonials={testimonials} />
-          </div>
-        </MainMenusGradientCard>
-        <MainMenusGradientCard
-          className="p-4"
-          description="How fast is it now to create cards"
-          title="Just crazy"
-        >
-          If leave the card empty, it will still look good
-        </MainMenusGradientCard>
-        <MainMenusGradientCard
-          description="I just have to copy paste the code and it instantly works"
-          title="Amazing"
-        />
-        <MainMenusGradientCard
-          description="I can't believe how easy it is to use"
-          title="Unbelievable"
-        />
+      <div className="max-w-[60vw] mx-auto mb-4 px-8">
+        {`
+      These projects highlight my skills in building responsive, high-performance interfaces with 
+      a focus on smooth user experience and clean, maintainable code.`}
+      </div>
+      <div className="w-full max-w-[60vw] mx-auto grid relative p-2 grid-cols-1 gap-16">
+        {content.map((project, index) => (
+          <MainMenusGradientCard
+            key={index}
+            className="p-4 h-full"
+            description={project.description}
+            title={project.title}
+            tags={project.tags}
+            type={project.type}
+            status={project.status}
+          >
+            <div
+              className={cn(
+                "z-50 absolute transform h-full w-full",
+                project.type === "mobile" ? "bottom-20" : "bottom-6"
+              )}
+            >
+              <AnimatedTestimonials
+                testimonials={project.images}
+                type={project.type}
+              />
+            </div>
+          </MainMenusGradientCard>
+        ))}
       </div>
     </div>
   );

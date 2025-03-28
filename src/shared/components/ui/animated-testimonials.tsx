@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/shared/lib/utils";
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
@@ -13,8 +14,10 @@ type Testimonial = {
 };
 const AnimatedTestimonials = ({
   testimonials,
+  type,
 }: {
   testimonials: Testimonial[];
+  type: "default" | "large" | "mobile";
   autoplay?: boolean;
 }) => {
   const [active, setActive] = useState(0);
@@ -75,7 +78,10 @@ const AnimatedTestimonials = ({
                   width={500}
                   height={500}
                   draggable={false}
-                  className="h-full w-full rounded-3xl object-cover object-center"
+                  className={cn(
+                    "h-full w-full rounded-2xl object-cover",
+                    type === "mobile" ? "object-center" : "object-left-top"
+                  )}
                 />
               </motion.div>
             );
@@ -85,15 +91,21 @@ const AnimatedTestimonials = ({
       <div className="flex gap-4 pt-2 mx-auto">
         <button
           onClick={handlePrev}
-          className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
+          className="group/button arrow flex h-7 w-7 items-center justify-center rounded-full border-accent-purple border cursor-pointer"
         >
-          <IconArrowLeft className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:rotate-12 dark:text-neutral-400" />
+          <IconArrowLeft
+            className="h-5 w-5 transition-transform duration-300 group-hover/button:rotate-[24deg] opacity-80"
+            strokeWidth={1.3}
+          />
         </button>
         <button
           onClick={handleNext}
-          className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
+          className="group/button arrow flex h-7 w-7 items-center justify-center rounded-full border-accent-purple border cursor-pointer"
         >
-          <IconArrowRight className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:-rotate-12 dark:text-neutral-400" />
+          <IconArrowRight
+            className="h-5 w-5 transition-transform duration-300 group-hover/button:-rotate-[24deg] opacity-80"
+            strokeWidth={1.3}
+          />
         </button>
       </div>
     </div>

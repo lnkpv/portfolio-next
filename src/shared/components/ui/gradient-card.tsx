@@ -1,12 +1,18 @@
 "use client";
+import { TagType } from "@/shared/data";
 import { useMouse } from "@/shared/hooks/use-mouse";
 import { cn } from "@/shared/lib/utils";
 import type { ReactNode } from "react";
+import { TerminalIcon } from "./icons/terminal";
 import Noise from "./noise";
+import Tag from "./tag";
 
 export const MainMenusGradientCard = ({
   title,
   description,
+  type = "default",
+  status,
+  tags,
   circleSize = 400,
   className,
   children,
@@ -15,6 +21,9 @@ export const MainMenusGradientCard = ({
 }: {
   title: string;
   description?: string;
+  type?: "default" | "large" | "mobile";
+  status?: string;
+  tags?: TagType[];
   withArrow?: boolean;
   circleSize?: number;
   children?: ReactNode;
@@ -25,11 +34,11 @@ export const MainMenusGradientCard = ({
 
   return (
     <div
-      className="group relative transform-gpu rounded-[20px] bg-white/10 transition-transform hover:scale-[1.01]"
+      className="group relative transform-gpu rounded-[20px] max-h-[37vh] bg-white/10 transition-transform hover:scale-[1.01]"
       ref={parentRef}
     >
-      <Noise className="overflow-clip rounded-[20px]" type={"hero"} />
-      <div className="absolute h-full  w-full overflow-hidden rounded-[20px] -z-[1]">
+      <Noise className="overflow-clip rounded-[20px]" type={"projects"} />
+      <div className="absolute h-full w-full overflow-hidden rounded-[20px] -z-[1]">
         <div
           className={cn(
             "-translate-x-1/2 -translate-y-1/2 absolute transform-gpu h-full rounded-full transition-transform duration-500 group-hover:scale-[3]",
@@ -52,19 +61,53 @@ export const MainMenusGradientCard = ({
         <div className="absolute inset-px rounded-[19px] bg-background/90 " />
       </div>
       <div className="flex justify-between w-full p-2 h-full gap-4">
-        <div className="relative px-4 pt-4 pb-2">
-          <h3 className="font-semibold text-lg text-neutral-800 dark:text-neutral-300">
+        <div
+          className={cn(
+            "relative p-4 flex flex-col",
+            type === "large" ? "w-1/2" : type === "mobile" ? "w-4/7" : "w-1/2"
+          )}
+        >
+          <h3 className="font-semibold text-lg text-foreground leading-tight">
             {title}
           </h3>
           {description && (
-            <p className="mt-2 text-neutral-600 dark:text-neutral-400">
+            <div className="mt-4 text-[0.8rem] text-foreground/80 leading-tight grow-1 whitespace-pre-wrap">
               {description}
-            </p>
+            </div>
+          )}
+          {status && (
+            <code className="my-4 py-0.5 px-2 text-[0.7rem] text-accent-yellow tracking-tighter font-medium bg-accent-yellow/10 rounded-sm w-fit border-accent-yellow/20 border-[1px]">
+              <TerminalIcon size={16}>{status}</TerminalIcon>
+            </code>
+          )}
+          {tags && (
+            <div className="flex flex-wrap gap-2">
+              {tags.map((tag, index) => (
+                <Tag
+                  color={tag.color}
+                  key={index}
+                  rounded={tag.rounded}
+                  size={tag.size}
+                  border={tag.border}
+                  icon={tag.icon}
+                >
+                  {tag.children}
+                </Tag>
+              ))}
+            </div>
           )}
         </div>
         {children && (
           <div
-            className={cn("flex relative w-1/2 max-h-[60vh] h-max", className)}
+            className={cn(
+              "flex relative h-max",
+              className,
+              type === "large"
+                ? "w-1/2 min-h-[30vh]"
+                : type === "mobile"
+                ? "w-2/10 min-h-[43vh] mx-auto"
+                : "w-1/2 min-h-[35vh]"
+            )}
           >
             {children}
           </div>
