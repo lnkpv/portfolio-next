@@ -1,21 +1,11 @@
 "use client";
 
-import { TerminalDemo } from "@/shared/components/TerminalDemo";
 import DecryptedText from "@/shared/components/ui/decrypted-text";
 import LiquidChrome from "@/shared/components/ui/liquid-chrome";
 import Noise from "@/shared/components/ui/noise";
 import Image from "next/image";
-import { useRef } from "react";
 
 const Hero = ({ className }: { className: string }) => {
-  const start = useRef<null | HTMLDivElement>(null);
-
-  // useLayoutEffect(() => {
-  //   setTimeout(() => {
-  //     start.current?.scrollIntoView();
-  //   }, 8500);
-  // }, []);
-
   const config = {
     baseColor: {
       r: 24,
@@ -29,11 +19,7 @@ const Hero = ({ className }: { className: string }) => {
 
   return (
     <div id="home" className={className}>
-      <div className="terminal h-screen flex justify-center items-center">
-        <TerminalDemo />
-      </div>
-
-      <div ref={start} className="h-[80vh] w-full relative flex items-center">
+      <div className="h-[90vh] w-full relative flex items-center">
         <Noise
           className="h-[55vh] top-1/2 -translate-y-1/2 z-[20]"
           type="hero"

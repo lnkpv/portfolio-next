@@ -19,9 +19,9 @@ export const MainMenusGradientCard = ({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   size = "md",
 }: {
-  title: string;
+  title?: string;
   description?: string;
-  type?: "default" | "large" | "mobile";
+  type?: "default" | "large" | "mobile" | "button";
   status?: string;
   tags?: TagType[];
   withArrow?: boolean;
@@ -31,6 +31,45 @@ export const MainMenusGradientCard = ({
   size?: "sm" | "md" | "lg";
 }) => {
   const [mouse, parentRef] = useMouse();
+
+  if (type === "button") {
+    return (
+      <div
+        className={cn(
+          "group relative transform-gpu rounded-lg bg-white/10 transition-transform hover:scale-[1.01]",
+          className
+        )}
+        ref={parentRef}
+      >
+        <Noise className="overflow-clip rounded-lg" type={"projects"} />
+        <div className="absolute h-full w-full overflow-hidden rounded-lg -z-[1]">
+          <div
+            className={cn(
+              "-translate-x-1/2 -translate-y-1/2 absolute transform-gpu h-full rounded-full transition-transform duration-500 group-hover:scale-[3]",
+              mouse.elementX === null || mouse.elementY === null
+                ? "opacity-0"
+                : "opacity-100"
+            )}
+            style={{
+              maskImage: `radial-gradient(${
+                circleSize / 2
+              }px circle at center, white, transparent)`,
+              width: `${circleSize}px`,
+              height: `${circleSize}px`,
+              left: `${mouse.elementX}px`,
+              top: `${mouse.elementY}px`,
+              background:
+                "linear-gradient(135deg, #7A69F9, #5304a2, #e0ba2c, #992857)",
+            }}
+          />
+          <div className="absolute inset-px rounded-lg bg-background/90 " />
+        </div>
+        <div className="flex justify-center items-center w-full p-2 h-full gap-2">
+          {children}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div

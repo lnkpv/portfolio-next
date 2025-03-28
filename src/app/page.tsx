@@ -1,22 +1,33 @@
-import About from "@/widgets/About";
-import Contacts from "@/widgets/Contacts";
-import Hero from "@/widgets/Hero";
-import { NavBar } from "@/widgets/NavBar";
-import Projects from "@/widgets/Projects";
-import Quote from "@/widgets/Quote";
-import Skills from "@/widgets/Skills";
+import { TerminalDemo } from "@/shared/components/TerminalDemo";
+import { MainMenusGradientCard } from "@/shared/components/ui/gradient-card";
+import { ChevronRightIcon } from "@/shared/components/ui/icons/chevron-right";
+import { SquareArrowOutUpRight } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="bg-background">
-      <NavBar />
-      <div className="flex w-full flex-col gap-48 max-w-[80vw] mx-auto">
-        <Hero className="-mx-[10vw] -mb-[10vh]" />
-        <About />
-        <Skills />
-        <Projects />
-        <Quote />
-        <Contacts />
+      <div className="terminal h-screen flex justify-center items-center flex-col gap-20">
+        <TerminalDemo />
+        <Link href="/me">
+          <MainMenusGradientCard type="button">
+            <ChevronRightIcon size={28}>
+              <div className="text-lg">Get started</div>
+            </ChevronRightIcon>
+          </MainMenusGradientCard>
+        </Link>
+
+        <Link
+          href="https://lnkpv.github.io/portfolio-js/"
+          className={
+            "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
+          }
+        >
+          <div className="flex items-center gap-2 text-foreground/40 -mt-16">
+            <div className="text-sm">Сheck out the old version</div>
+            <SquareArrowOutUpRight size={16} />
+          </div>
+        </Link>
       </div>
     </div>
   );
