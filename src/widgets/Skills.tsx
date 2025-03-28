@@ -1,10 +1,11 @@
 import { NeonGradientCard } from "@/shared/components/magicui/neon-gradient-card";
 import { SkillsTree } from "@/shared/components/SkillsTree";
 import Header from "@/shared/components/ui/header";
+import { cn } from "@/shared/lib/utils";
 
-function Skills() {
+function Skills({ className }: { className: string }) {
   return (
-    <div id="skills">
+    <div id="skills" className={cn("", className)}>
       <Header text="Skills" align="center" />
       <div className="grid grid-cols-2 pt-[4vh]">
         <NeonGradientCard

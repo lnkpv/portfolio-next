@@ -19,9 +19,7 @@ export default function Home() {
 
         <Link
           href="https://lnkpv.github.io/portfolio-js/"
-          className={
-            "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
-          }
+          className="relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
         >
           <div className="flex items-center gap-2 text-foreground/40 -mt-16">
             <div className="text-sm">Сheck out the old version</div>
