@@ -9,9 +9,11 @@ function MyButton({
   align = "",
   type = "default",
   size = "large",
+  background = true,
 }: {
   text: string;
-  size?: "default" | "large";
+  background?: boolean;
+  size?: "default" | "large" | "small";
   align?: "text-center" | "";
   iconLeft?: ReactNode;
   iconRight?: ReactNode;
@@ -20,8 +22,12 @@ function MyButton({
   const content = (
     <div
       className={cn(
-        "flex items-center justify-between gap-4",
-        size === "large" ? "pl-6 pr-4 py-3" : "py-2 px-4"
+        "flex items-center justify-between ",
+        size === "large"
+          ? "pl-6 pr-4 py-3 gap-4"
+          : size === "small"
+          ? "py-2 px-4 text-sm hidden md:flex gap-1.5"
+          : "py-2 px-4 gap-4"
       )}
     >
       {iconLeft}
@@ -33,7 +39,15 @@ function MyButton({
   if (type === "simple") {
     return content;
   }
-  return <MainMenusGradientCard type="button">{content}</MainMenusGradientCard>;
+  return (
+    <MainMenusGradientCard
+      type="button"
+      background={background}
+      circleSize={!background ? 200 : 400}
+    >
+      {content}
+    </MainMenusGradientCard>
+  );
 }
 
 export default MyButton;

@@ -11,6 +11,7 @@ export const MainMenusGradientCard = ({
   title,
   description,
   type = "default",
+  background = true,
   status,
   tags,
   circleSize = 400,
@@ -21,6 +22,7 @@ export const MainMenusGradientCard = ({
 }: {
   title?: string;
   description?: string;
+  background?: boolean;
   type?: "default" | "large" | "mobile" | "button";
   status?: string;
   tags?: TagType[];
@@ -36,13 +38,17 @@ export const MainMenusGradientCard = ({
     return (
       <div
         className={cn(
-          "group relative transform-gpu rounded-lg bg-white/10 transition-transform hover:scale-[1.01]",
+          "group relative transform-gpu rounded-2xl transition-transform hover:scale-[1.01]",
+          background && "bg-white/10",
           className
         )}
         ref={parentRef}
       >
-        <Noise className="overflow-clip rounded-lg" type={"projects"} />
-        <div className="absolute h-full w-full overflow-hidden rounded-lg -z-[1]">
+        {background && (
+          <Noise className="overflow-clip rounded-2xl" type={"projects"} />
+        )}
+
+        <div className="absolute h-full w-full overflow-hidden rounded-2xl -z-[1]">
           <div
             className={cn(
               "-translate-x-1/2 -translate-y-1/2 absolute transform-gpu h-full rounded-full transition-transform duration-500 group-hover:scale-[3]",
@@ -62,7 +68,7 @@ export const MainMenusGradientCard = ({
                 "linear-gradient(135deg, #7A69F9, #5304a2, #e0ba2c, #992857)",
             }}
           />
-          <div className="absolute inset-px rounded-lg bg-background/90" />
+          <div className="absolute inset-px rounded-2xl bg-background/90" />
         </div>
         {children}
       </div>

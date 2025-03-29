@@ -1,9 +1,8 @@
-"use client";
-
 import CircleImage from "@/shared/components/CircleImage";
-import DecryptedText from "@/shared/components/ui/decrypted-text";
+import Greeting from "@/shared/components/greeting";
 import LiquidChrome from "@/shared/components/ui/liquid-chrome";
 import Noise from "@/shared/components/ui/noise";
+import { TextGenerateEffect } from "@/shared/components/ui/text-generate-effect";
 
 const Hero = ({ className }: { className: string }) => {
   const config = {
@@ -16,6 +15,67 @@ const Hero = ({ className }: { className: string }) => {
     speed: 0.08,
     amplitude: 0.4,
   };
+
+  const line5 = [
+    {
+      text: "My",
+      className: "",
+    },
+    {
+      text: "name",
+      className: "",
+    },
+    {
+      text: "is",
+      className: "",
+    },
+    {
+      text: "Alina.",
+      className: "",
+    },
+    {
+      text: "I'm",
+      className: "",
+    },
+    {
+      text: "a",
+      className: "",
+    },
+    {
+      text: "frontend",
+      className: "text-accent-yellow font-semibold",
+    },
+    {
+      text: "developer",
+      className: "text-accent-yellow font-semibold",
+    },
+  ];
+  const line3 = [
+    {
+      text: "and",
+      className: "",
+    },
+    {
+      text: "web",
+      className: "text-accent-yellow font-semibold",
+    },
+    {
+      text: "designer",
+      className: "text-accent-yellow font-semibold",
+    },
+    {
+      text: "based",
+      className: "",
+    },
+    {
+      text: "in",
+      className: "",
+    },
+    {
+      text: "Moscow.",
+      className: "",
+    },
+  ];
 
   return (
     <div id="home" className={className}>
@@ -37,70 +97,21 @@ const Hero = ({ className }: { className: string }) => {
             interactive={true}
           />
         </div>
-        <div className="pointer-events-none relative backdrop-blur-2xl bg-background/20 rounded-2xl px-20 pt-20 pb-12 m-auto max-w-[70vw] w-full flex flex-col gap-3 justify-center text-md md:text-xl z-1">
-          <div className="mb-4 text-md md:text-4xl font-semibold">
-            <DecryptedText
-              text="Hi! I'm Alina!"
-              speed={60}
-              maxIterations={10}
-              revealDirection="center"
-              sequential
-            />
-          </div>
-          <div className="mb-4 text-md md:text-3xl max-w-3/4">
-            <span>
-              <DecryptedText
-                text="I'm a "
-                speed={60}
-                maxIterations={10}
-                revealDirection="center"
-                sequential
-              />
-              <span className="text-accent-yellow font-semibold">
-                <DecryptedText
-                  text="frontend developer"
-                  speed={60}
-                  maxIterations={10}
-                  revealDirection="center"
-                  sequential
-                />
-              </span>
-            </span>
-            <br />
-            <span>
-              <DecryptedText
-                text="and "
-                speed={60}
-                maxIterations={10}
-                revealDirection="center"
-                sequential
-              />
-              <span className="text-accent-yellow font-semibold">
-                <DecryptedText
-                  text="web designer "
-                  speed={60}
-                  maxIterations={10}
-                  revealDirection="center"
-                  sequential
-                />
-              </span>
-              <DecryptedText
-                text="based in Moscow."
-                speed={60}
-                maxIterations={10}
-                revealDirection="center"
-                sequential
-              />
-            </span>
-          </div>
-          <div className="h-0.5 w-full max-w-2/3 bg-accent-yellow/20 mb-2"></div>
-          <DecryptedText
-            text="And this is my portfolio."
-            speed={60}
-            maxIterations={10}
-            revealDirection="center"
-            sequential
+        <div className="pointer-events-none relative backdrop-blur-2xl bg-background/20 rounded-2xl gap-4 px-20 py-16 m-auto max-w-[70vw] w-full flex flex-col justify-center text-md md:text-xl z-1">
+          <Greeting></Greeting>
+          <div className="w-4/5 border-accent-yellow/40 border-t-2 border-dotted"></div>
+          <TextGenerateEffect
+            className="text-3xl font-light -mb-3"
+            words={line5}
+            delay={0.1}
           />
+          <TextGenerateEffect
+            className="text-3xl font-light mb-2"
+            words={line3}
+            delay={2}
+          />
+
+          {/* <div className="w-2/5 border-accent-yellow/40 border-t-2 border-dotted"></div> */}
         </div>
         {/* <div className="absolute h-[55vh] w-full top-1/2 -translate-y-1/2 bg-accent-purple/80 z-0 mix-blend-exclusion"></div> */}
 
