@@ -64,7 +64,7 @@ interface NeonGradientCardProps {
    * The colors of the neon gradient
    * */
   neonColors?: NeonColorsProps;
-  type?: "default" | "quote";
+  type?: "default" | "quote" | "contacts";
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any;
@@ -148,6 +148,9 @@ export const NeonGradientCard: React.FC<NeonGradientCardProps> = ({
       >
         {type === "default" && (
           <Noise className="rounded-[20px] overflow-clip" />
+        )}
+        {type === "contacts" && (
+          <Noise type="hero" className="rounded-[20px] overflow-clip" />
         )}
         {children}
       </div>

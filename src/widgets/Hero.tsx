@@ -1,9 +1,9 @@
 "use client";
 
+import CircleImage from "@/shared/components/CircleImage";
 import DecryptedText from "@/shared/components/ui/decrypted-text";
 import LiquidChrome from "@/shared/components/ui/liquid-chrome";
 import Noise from "@/shared/components/ui/noise";
-import Image from "next/image";
 
 const Hero = ({ className }: { className: string }) => {
   const config = {
@@ -24,15 +24,7 @@ const Hero = ({ className }: { className: string }) => {
           className="h-[55vh] top-1/2 -translate-y-1/2 z-[20]"
           type="hero"
         />
-        <div className="absolute shadow-[0_0_10px_1px_rgba(30,0,59,0.8)] left-[20vw] top-[6vh] size-[155px] rounded-full overflow-clip z-[100]">
-          <Image
-            className="object-center object-none"
-            src="/me.webp"
-            width={192}
-            height={192}
-            alt="lnkpv's photo"
-          ></Image>
-        </div>
+        <CircleImage />
         <div className="absolute h-[55vh] w-full top-1/2 -translate-y-1/2 opacity-60 z-0">
           <LiquidChrome
             baseColor={[

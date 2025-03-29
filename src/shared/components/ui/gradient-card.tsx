@@ -62,11 +62,9 @@ export const MainMenusGradientCard = ({
                 "linear-gradient(135deg, #7A69F9, #5304a2, #e0ba2c, #992857)",
             }}
           />
-          <div className="absolute inset-px rounded-lg bg-background/90 " />
+          <div className="absolute inset-px rounded-lg bg-background/90" />
         </div>
-        <div className="flex justify-center items-center w-full p-2 h-full gap-2">
-          {children}
-        </div>
+        {children}
       </div>
     );
   }
