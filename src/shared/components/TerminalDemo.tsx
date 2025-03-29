@@ -6,7 +6,7 @@ import {
 
 export function TerminalDemo() {
   return (
-    <Terminal className="dark:bg-neutral-900 bg-pink-300">
+    <Terminal className="bg-foreground/2">
       <TypingAnimation duration={40}>&gt; init welcome</TypingAnimation>
 
       <AnimatedSpan delay={1000} className="text-green-500">

@@ -27,7 +27,7 @@ const data: CardType[] = [
           <FilePenLineIcon size={48} />
           <CoffeeIcon
             size={48}
-            className="text-foreground/70 group-hover:text-foreground/60"
+            className="text-foreground/90 group-hover:text-foreground/80"
           />
           <BookTextIcon size={48} />
         </div>
@@ -65,7 +65,7 @@ const data: CardType[] = [
           <UserRound
             size={70}
             strokeWidth={1}
-            className="mt-10 text-foreground/70 group-hover:text-foreground/60"
+            className="mt-10 text-foreground/90 group-hover:text-foreground/80"
           />
         </div>
       </div>
@@ -80,9 +80,9 @@ const data: CardType[] = [
   {
     title: "Technology",
     icon: (
-      <div className="cursor-pointer transform-gpu transition-all group-hover:scale-50 duration-300 leading-none justify-center flex border-dotted rounded-xl border-2 border-accent-purple text-foreground/70 group-hover:text-foreground/60">
+      <div className="cursor-pointer transform-gpu transition-all group-hover:scale-50 duration-300 leading-none justify-center flex border-dotted rounded-xl border-2 border-accent-purple text-foreground/90 group-hover:text-foreground/80">
         <div className="text-lg font-medium flex flex-col py-2 transition-transform ">
-          <div className="transform hover:scale-125 transition-transform text-foreground/70 group-hover:text-foreground/60">
+          <div className="transform hover:scale-125 transition-transform">
             eat
             <span className="text-accent-yellow group-hover:text-accent-yellow/90">
               ();
@@ -133,7 +133,7 @@ const data: CardType[] = [
           />
           <FigmaIcon
             size={80}
-            className="mr-28 text-foreground/70 group-hover:text-foreground/60"
+            className="mr-28 text-foreground/90 group-hover:text-foreground/80"
           />
         </div>
       </div>

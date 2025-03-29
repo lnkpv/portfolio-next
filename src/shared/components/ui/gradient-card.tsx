@@ -38,8 +38,7 @@ export const MainMenusGradientCard = ({
     return (
       <div
         className={cn(
-          "group relative transform-gpu rounded-2xl transition-transform hover:scale-[1.01]",
-          background && "bg-white/10",
+          "group relative transform-gpu rounded-2xl transition-transform hover:scale-[1.01] bg-foreground/10",
           className
         )}
         ref={parentRef}
@@ -77,7 +76,7 @@ export const MainMenusGradientCard = ({
 
   return (
     <div
-      className="group relative transform-gpu rounded-[20px] max-h-[37vh] bg-white/10 transition-transform hover:scale-[1.01]"
+      className="group relative transform-gpu rounded-[20px] max-h-[37vh] bg-foreground/10 transition-transform hover:scale-[1.01]"
       ref={parentRef}
     >
       <Noise className="overflow-clip rounded-[20px]" type={"projects"} />
@@ -119,7 +118,7 @@ export const MainMenusGradientCard = ({
             </div>
           )}
           {status && (
-            <code className="my-4 py-0.5 px-2 text-[0.7rem] text-accent-yellow tracking-tighter font-medium bg-accent-yellow/10 rounded-sm w-fit border-accent-yellow/20 border-[1px]">
+            <code className="my-4 py-0.5 px-2 text-[0.7rem] text-accent-yellow tracking-tighter font-medium bg-accent-yellow/5 rounded-sm w-fit border-accent-yellow/20 border-[1px]">
               <TerminalIcon size={16}>{status}</TerminalIcon>
             </code>
           )}

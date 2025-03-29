@@ -142,7 +142,7 @@ export function Safari({
             href={imageSrc}
             width="1200"
             height="700"
-            className="h-auto w-full object-cover opacity-[0.08]"
+            className="h-auto w-full object-cover opacity-[0.08] invert-100 dark:invert-0"
             x="1"
             y="52"
             preserveAspectRatio="xMidYMid slice"

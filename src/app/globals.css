@@ -60,7 +60,7 @@
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
-  --accent-yellow: oklch(74.47% 0.1703 94.82);
+  --accent-yellow: oklch(81.36% 0.1703 94.82);
   --accent-purple: oklch(38.49% 0.2075 295.59);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
@@ -98,6 +98,7 @@
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
+  --accent-yellow: oklch(74.47% 0.1703 94.82);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
@@ -134,6 +135,10 @@ button > svg {
 }
 
 .arrow > svg {
+  color: var(--foreground);
+}
+
+.themeButton > svg {
   color: var(--foreground);
 }
 

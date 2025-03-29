@@ -1,6 +1,7 @@
 import { TerminalDemo } from "@/shared/components/TerminalDemo";
 import { ChevronRightIcon } from "@/shared/components/ui/icons/chevron-right";
 import MyButton from "@/shared/components/ui/my-button";
+import PillToggleTheme from "@/shared/components/ui/pill-toggle-theme";
 import { SquareArrowOutUpRight } from "lucide-react";
 import Link from "next/link";
 
@@ -8,7 +9,12 @@ export default function Home() {
   return (
     <div className="bg-background">
       <div className="terminal h-screen flex justify-center items-center flex-col gap-20">
-        <TerminalDemo />
+        <div className="relative">
+          <TerminalDemo />
+          <div className="absolute top-0 -right-15">
+            <PillToggleTheme />
+          </div>
+        </div>
 
         <Link href="/me">
           <MyButton

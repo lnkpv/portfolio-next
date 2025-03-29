@@ -12,7 +12,7 @@ export default function Home() {
     <div className="bg-background">
       <NavBar />
       <div className="flex w-full flex-col gap-48">
-        <Hero className="-mb-[10vh]" />
+        <Hero className="-mb-[10vh] text-white" />
         <About className="max-w-[80vw] mx-auto" />
         <Marquee />
         <Skills className="mx-[10vw]" />
