@@ -1,14 +1,31 @@
+import { NeonGradientCard } from "@/shared/components/magicui/neon-gradient-card";
+import { Safari } from "@/shared/components/magicui/safari";
 import { SparklesText } from "@/shared/components/magicui/sparkles-text";
 import { cn } from "@/shared/lib/utils";
 
 function Quote({ className }: { className?: string }) {
   return (
-    <div className={cn("max-w-[30vw] mx-auto", className)}>
+    <div className={cn("max-w-[37vw] mx-auto relative w-full", className)}>
       <SparklesText
-        text="Code that performs, designs that inspire."
-        className="text-4xl font-light text-center w-fit flex"
+        text="Code&nbsp;that&nbsp;performs, designs&nbsp;that&nbsp;inspire."
+        className="absolute text-4xl font-light text-center h-fit w-fit flex top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 max-w-[30vw] z-50"
         colors={{ first: "#6123b4", second: "#e5bf00" }}
       />
+      <NeonGradientCard
+        type="quote"
+        borderRadius={7}
+        borderSize={1}
+        neonColors={{
+          firstColor: "rgba(70, 3, 139, 0.5)",
+          secondColor: "rgba(172, 144, 11, 0.5)",
+        }}
+      >
+        <Safari
+          url="lnkpv"
+          className="w-full h-full z-50 bg-background rounded-[5.5]"
+          imageSrc="/noise.svg"
+        ></Safari>
+      </NeonGradientCard>
       {/* Code that
       <LineShadowText shadowColor="white">performs,</LineShadowText>
       designs that

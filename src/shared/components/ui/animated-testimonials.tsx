@@ -82,6 +82,7 @@ const AnimatedTestimonials = ({
                     "h-full w-full rounded-2xl object-cover",
                     type === "mobile" ? "object-center" : "object-left-top"
                   )}
+                  unoptimized={testimonial.name.toLowerCase().includes("luna")}
                 />
               </motion.div>
             );
