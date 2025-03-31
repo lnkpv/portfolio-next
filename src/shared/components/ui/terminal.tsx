@@ -20,7 +20,10 @@ export const AnimatedSpan = ({
     initial={{ opacity: 0, y: -5 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.3, delay: delay / 1000 }}
-    className={cn("grid text-sm font-normal tracking-tight", className)}
+    className={cn(
+      "grid text-[0.55rem] sm:text-[0.7rem] md:text-sm font-normal tracking-tight",
+      className
+    )}
     {...props}
   >
     {children}
@@ -83,7 +86,10 @@ export const TypingAnimation = ({
   return (
     <MotionComponent
       ref={elementRef}
-      className={cn("text-sm font-normal tracking-tight", className)}
+      className={cn(
+        "text-[0.55rem] sm:text-[0.7rem] md:text-sm  font-normal tracking-tight",
+        className
+      )}
       {...props}
     >
       {displayedText}
@@ -100,7 +106,7 @@ export const Terminal = ({ children, className }: TerminalProps) => {
   return (
     <div
       className={cn(
-        "z-0 h-full max-h-[400px] w-full max-w-xl rounded-xl border border-border bg-background",
+        "z-0 h-full max-h-[400px] w-full max-w-sm md:max-w-xl rounded-xl border border-border bg-background",
         className
       )}
     >

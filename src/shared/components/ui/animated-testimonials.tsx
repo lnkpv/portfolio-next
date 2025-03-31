@@ -38,7 +38,7 @@ const AnimatedTestimonials = ({
     return Math.floor(Math.random() * 21) - 10;
   };
   return (
-    <div className=" flex flex-col gap-2 relative mx-auto max-w-xl w-full h-full font-sans antialiased ">
+    <div className="flex flex-col gap-2 relative mx-auto w-full h-full font-sans antialiased ">
       <div className="relative grow w-full h-full">
         <AnimatePresence>
           {testimonials.map((testimonial, index) => {
@@ -70,7 +70,7 @@ const AnimatedTestimonials = ({
                   duration: 0.4,
                   ease: "easeInOut",
                 }}
-                className="absolute inset-0 origin-bottom"
+                className="absolute inset-0 origin-bottom border-foreground/10 border rounded-2xl"
               >
                 <Image
                   src={testimonial.src}

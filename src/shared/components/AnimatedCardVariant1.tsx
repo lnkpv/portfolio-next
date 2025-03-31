@@ -23,7 +23,7 @@ const data: CardType[] = [
     title: "Education",
     icon: (
       <div className="transform-gpu text-xl h-full cursor-pointer transition-all group-hover:scale-50 duration-300">
-        <div className="flex min-h-[15vh] h-full w-full items-center justify-center relative px-8 border-dotted rounded-xl border-2 transition-colors border-accent-purple text-accent-yellow group-hover:text-accent-yellow/90">
+        <div className="flex h-full w-full items-center justify-center relative px-8 border-dotted rounded-xl border-2 transition-colors border-accent-purple text-accent-yellow group-hover:text-accent-yellow/90">
           <FilePenLineIcon size={48} />
           <CoffeeIcon
             size={48}
@@ -45,7 +45,7 @@ const data: CardType[] = [
     title: "Creativity",
     icon: (
       <div className="transform-gpu text-xl h-full cursor-pointer transition-all group-hover:scale-[0.6] duration-300">
-        <div className="min-h-[15vh] flex h-full w-full items-center justify-center relative">
+        <div className="flex h-full w-full items-center justify-center relative">
           <SparklesIcon
             size={36}
             className="absolute top-4 left-12 -rotate-12 text-accent-yellow group-hover:text-accent-yellow/90"
@@ -120,7 +120,7 @@ const data: CardType[] = [
     title: "Design",
     icon: (
       <div className="transform-gpu text-xl h-full cursor-pointer transition-all group-hover:scale-[0.6] duration-300 text-accent-yellow group-hover:text-accent-yellow/90">
-        <div className="min-h-[15vh] flex h-full w-full items-center justify-center relative">
+        <div className="flex h-full w-full items-center justify-center relative">
           <SquarePenIcon
             size={40}
             className="absolute top-16 right-15 text-accent-purple group-hover:text-accent-purple/90"
@@ -149,7 +149,7 @@ const data: CardType[] = [
 
 export function AnimatedCardVariant1() {
   return (
-    <div className="flex relative">
+    <div className="flex relative w-full flex-wrap xl:flex-nowrap justify-center gap-4 md:gap-0">
       {data.map((card, index) => (
         <Card
           className={cn(
@@ -189,7 +189,7 @@ function Card({
   return (
     <div
       className={cn(
-        "group transform-gpu transition-all duration-300",
+        "group transform-gpu transition-all duration-300 w-[220px] h-[230px] xl:w-[220px] xl:h-[230px]",
         className
       )}
     >
@@ -203,9 +203,9 @@ function Card({
             id % 2 === 0 ? "rgba(172, 144, 11, 0.5)" : "rgba(70, 3, 139, 0.5)",
         }}
       >
-        <div className="px-4 py-4 bg-background h-full overflow-clip rounded-[20px]">
-          <div className="pointer-events-none z-10 w-[13vw] flex transform-gpu flex-col gap-1 transition-all duration-400 group-hover:-translate-y-10">
-            <div className="pointer-events-auto transform-gpu transition-all group-hover:-mb-8 min-h-[15vh] h-full text-neutral-200 tracking-tighter group-hover:text-neutral-400 dark:text-neutral-700 dark:group-hover:text-neutral-400 ">
+        <div className="px-4 py-4 bg-background h-full overflow-clip rounded-[20px] ">
+          <div className="pointer-events-none z-10 w-full flex transform-gpu flex-col gap-1 transition-all duration-400 group-hover:-translate-y-10">
+            <div className="pointer-events-auto transform-gpu transition-all group-hover:-mb-8 h-[130px] text-neutral-200 tracking-tighter group-hover:text-neutral-400 dark:text-neutral-700 dark:group-hover:text-neutral-400 ">
               {icon}
             </div>
             <div className="text-accent-yellow text-xs mt-2">{description}</div>

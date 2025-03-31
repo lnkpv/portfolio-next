@@ -5,10 +5,15 @@ import { cn } from "@/shared/lib/utils";
 
 function Quote({ className }: { className?: string }) {
   return (
-    <div className={cn("max-w-[37vw] mx-auto relative w-full", className)}>
+    <div
+      className={cn(
+        "max-w-[70vw] sm:max-w-[50vw] lg:max-w-[550px] mx-auto relative w-full",
+        className
+      )}
+    >
       <SparklesText
         text="Code&nbsp;that&nbsp;performs, designs&nbsp;that&nbsp;inspire."
-        className="absolute text-4xl font-light text-center h-fit w-fit flex top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 max-w-[30vw] z-50"
+        className="absolute text-lg sm:text-xl md:text-3xl lg:text-4xl font-light text-center h-fit w-fit flex top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 max-w-[60vw] sm:max-w-[35vw] lg:max-w-[400px] z-50"
         colors={{ first: "#6123b4", second: "#e5bf00" }}
       />
       <NeonGradientCard

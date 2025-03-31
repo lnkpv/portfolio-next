@@ -8,10 +8,10 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="bg-background">
-      <div className="terminal h-screen flex justify-center items-center flex-col gap-20">
+      <div className="terminal h-screen flex justify-center items-center flex-col gap-10 md:gap-20">
         <div className="relative">
           <TerminalDemo />
-          <div className="absolute top-0 -right-15">
+          <div className="absolute -top-20 right-0 md:top-0 md:-right-15">
             <PillToggleTheme />
           </div>
         </div>
@@ -28,7 +28,7 @@ export default function Home() {
           href="https://lnkpv.github.io/portfolio-js/"
           className="relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
         >
-          <div className="flex items-center gap-2 text-foreground/40 -mt-16">
+          <div className="flex items-center gap-2 text-foreground/40 -mt-4 md:-mt-16">
             <div className="text-sm">Сheck out the old version</div>
             <SquareArrowOutUpRight size={16} />
           </div>

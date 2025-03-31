@@ -76,7 +76,7 @@ export const MainMenusGradientCard = ({
 
   return (
     <div
-      className="group relative transform-gpu rounded-[20px] max-h-[37vh] bg-foreground/10 transition-transform hover:scale-[1.01]"
+      className="group relative transform-gpu rounded-[20px] h-[230px] md:h-[250px] lg:h-[300px] bg-foreground/10 transition-transform hover:scale-[1.01]"
       ref={parentRef}
     >
       <Noise className="overflow-clip rounded-[20px]" type={"projects"} />
@@ -102,28 +102,32 @@ export const MainMenusGradientCard = ({
         />
         <div className="absolute inset-px rounded-[19px] bg-background/90 " />
       </div>
-      <div className="flex justify-between w-full p-2 h-full gap-4">
+      <div className="flex justify-between w-full p-0 sm:p-2 sm:pr-0 h-full gap-2 sm:gap-5">
         <div
           className={cn(
-            "relative p-4 flex flex-col",
-            type === "large" ? "w-1/2" : type === "mobile" ? "w-4/7" : "w-1/2"
+            "relative p-4 pr-0 sm:p-4 flex flex-col",
+            type === "large"
+              ? "w-2/3 lg:w-1/2"
+              : type === "mobile"
+              ? "w-4/7 lg:w-4/7"
+              : "w-5/7 lg:w-1/2"
           )}
         >
-          <h3 className="font-semibold text-lg text-foreground leading-tight">
+          <h3 className="font-semibold text-xs md:text-sm lg:text-lg text-foreground leading-tight">
             {title}
           </h3>
           {description && (
-            <div className="mt-4 text-[0.8rem] text-foreground/80 leading-tight grow-1 whitespace-pre-wrap">
+            <div className="mt-2 lg:mt-4 text-[0.6rem] md:text-[0.65rem] lg:text-[0.8rem] text-foreground/80 leading-[1] grow-1 whitespace-pre-wrap">
               {description}
             </div>
           )}
           {status && (
-            <code className="my-4 py-0.5 px-2 text-[0.7rem] text-accent-yellow tracking-tighter font-medium bg-accent-yellow/5 rounded-sm w-fit border-accent-yellow/20 border-[1px]">
+            <code className="mt-2 lg:mt-4 py-0.5 px-2 text-[0.6rem] lg:text-[0.7rem] text-accent-yellow tracking-tighter font-medium bg-accent-yellow/5 rounded-sm w-fit border-accent-yellow/20 border-[1px]">
               <TerminalIcon size={16}>{status}</TerminalIcon>
             </code>
           )}
           {tags && (
-            <div className="flex flex-wrap gap-2">
+            <div className="mt-2 flex flex-wrap gap-0.5 md:gap-1 lg:gap-2 -mr-24 xs:mr-0">
               {tags.map((tag, index) => (
                 <Tag
                   color={tag.color}
@@ -142,13 +146,13 @@ export const MainMenusGradientCard = ({
         {children && (
           <div
             className={cn(
-              "flex relative h-max",
+              "flex relative h-max w-full",
               className,
               type === "large"
-                ? "w-1/2 min-h-[30vh]"
+                ? "w-1/2"
                 : type === "mobile"
-                ? "w-2/10 min-h-[43vh] mx-auto"
-                : "w-1/2 min-h-[35vh]"
+                ? "w-2/11"
+                : "w-1/2"
             )}
           >
             {children}

@@ -81,15 +81,15 @@ const Hero = ({ className }: { className: string }) => {
   return (
     <div id="home" className={className}>
       <div className="h-[90vh] w-full relative flex items-center">
-        <div className="absolute top-16 right-25 z-[999]">
+        <div className="absolute top-16 right-10 md:right-25 z-[999]">
           <PillToggleTheme />
         </div>
         <Noise
-          className="h-[55vh] top-1/2 -translate-y-1/2 z-[10]"
+          className="h-[40vh] md:h-[55vh] lg:h-[45vh] xl:h-[500px] top-1/2 -translate-y-1/2 z-[10]"
           type="hero"
         />
-        <CircleImage />
-        <div className="absolute h-[55vh] w-full top-1/2 -translate-y-1/2 z-0">
+
+        <div className="absolute h-[40vh] md:h-[55vh] lg:h-[45vh] xl:h-[500px] w-full top-1/2 -translate-y-1/2 z-0">
           <LiquidChrome
             baseColor={[
               Number((config.baseColor.r / 255).toFixed(1)),
@@ -101,16 +101,17 @@ const Hero = ({ className }: { className: string }) => {
             interactive={true}
           />
         </div>
-        <div className="pointer-events-none relative backdrop-blur-2xl bg-foreground/20 dark:bg-background/20 rounded-2xl gap-4 px-20 py-16 m-auto max-w-[70vw] w-full flex flex-col justify-center text-md md:text-xl z-1">
+        <div className="pointer-events-none relative backdrop-blur-2xl bg-foreground/20 dark:bg-background/20 rounded-2xl gap-2 sm:gap-4 px-6 sm:px-10 lg:px-20 py-6 sm:py-10 lg:py-16 m-auto max-w-[90vw] sm:max-w-[70vw] w-full flex flex-col justify-center z-[10]">
+          <CircleImage />
           <Greeting></Greeting>
           <div className="w-4/5 border-accent-yellow/40 border-t-2 border-dotted"></div>
           <TextGenerateEffect
-            className="text-3xl font-light -mb-3"
+            className="text-xs sm:text-md md:text-xl lg:text-2xl xl:text-3xl font-light -mb-2 md:-mb-3"
             words={line5}
             delay={0.1}
           />
           <TextGenerateEffect
-            className="text-3xl font-light mb-2"
+            className="text-xs sm:text-md md:text-xl lg:text-2xl xl:text-3xl font-light mb-2"
             words={line3}
             delay={2}
           />

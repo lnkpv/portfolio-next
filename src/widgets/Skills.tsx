@@ -7,8 +7,9 @@ function Skills({ className }: { className: string }) {
   return (
     <div id="skills" className={cn("", className)}>
       <Header text="Skills" align="center" />
-      <div className="grid grid-cols-2 pt-[4vh]">
+      <div className="grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1 pt-[4vh] gap-4">
         <NeonGradientCard
+          type="skill"
           className="max-w-md items-center justify-center text-center mx-auto"
           borderSize={1}
           neonColors={{
@@ -19,6 +20,7 @@ function Skills({ className }: { className: string }) {
           <SkillsTree type="soft" />
         </NeonGradientCard>
         <NeonGradientCard
+          type="skill"
           className="max-w-md items-center justify-center text-center mx-auto"
           borderSize={1}
           neonColors={{

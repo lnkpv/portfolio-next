@@ -4,8 +4,8 @@ import { NeonGradientCard } from "./magicui/neon-gradient-card";
 function CircleImage({ type = "hero" }: { type?: "hero" | "contacts" }) {
   const style =
     type === "hero"
-      ? "absolute left-[20vw] top-[7vh] size-[155px] rounded-full z-[100]"
-      : "size-[175px] p-6";
+      ? "absolute -left-[5vw] sm:left-[0vw] md:left-[5vw] -top-[15vh] sm:-top-[14vh] md:-top-[20vh] lg:-top-[15vh] xl:-top-[150px] size-[155px] scale-60 sm:scale-75 md:scale-100 rounded-full z-[999]"
+      : "size-[175px] p-6 scale-60 sm:scale-75 md:scale-100";
 
   return (
     <div className={style}>

@@ -57,42 +57,42 @@ export const content: ContentType[] = [
     status: "",
     tags: [
       {
-        icon: <TypescriptOriginal size={16} />,
+        icon: <TypescriptOriginal size={12} />,
         color: "blue",
         children: "typescript",
       },
       {
-        icon: <ReactOriginal size={16} />,
+        icon: <ReactOriginal size={12} />,
         color: "blue",
         children: "react",
       },
       {
-        icon: <NextjsOriginal size={16} />,
+        icon: <NextjsOriginal size={12} />,
         color: "neutral",
         children: "next.js",
       },
       {
-        icon: <TailwindcssOriginal size={16} />,
+        icon: <TailwindcssOriginal size={12} />,
         color: "blue",
         children: "tailwindCSS",
       },
       {
-        icon: <Html5Original size={16} />,
+        icon: <Html5Original size={12} />,
         color: "orange",
         children: "html",
       },
       {
-        icon: <Css3Original size={16} />,
+        icon: <Css3Original size={12} />,
         color: "blue",
         children: "css",
       },
       {
-        icon: <VercelOriginal size={12} className="fill-foreground" />,
+        icon: <VercelOriginal size={10} className="fill-foreground" />,
         color: "neutral",
         children: "vercel",
       },
       {
-        icon: <FigmaOriginal size={14} />,
+        icon: <FigmaOriginal size={12} />,
         color: "violet",
         children: "figma",
       },
@@ -123,42 +123,42 @@ export const content: ContentType[] = [
     status: "work in progress",
     tags: [
       {
-        icon: <TypescriptOriginal size={16} />,
+        icon: <TypescriptOriginal size={12} />,
         color: "blue",
         children: "typescript",
       },
       {
-        icon: <ReactOriginal size={16} />,
+        icon: <ReactOriginal size={12} />,
         color: "blue",
         children: "react",
       },
       {
-        icon: <NextjsOriginal size={16} />,
+        icon: <NextjsOriginal size={14} />,
         color: "neutral",
         children: "next.js",
       },
       {
-        icon: <TailwindcssOriginal size={16} />,
+        icon: <TailwindcssOriginal size={12} />,
         color: "blue",
         children: "tailwindCSS",
       },
       {
-        icon: <Html5Original size={16} />,
+        icon: <Html5Original size={12} />,
         color: "orange",
         children: "html",
       },
       {
-        icon: <Css3Original size={16} />,
+        icon: <Css3Original size={12} />,
         color: "blue",
         children: "css",
       },
       {
-        icon: <ExpressOriginal size={12} className="fill-foreground" />,
+        icon: <ExpressOriginal size={10} className="fill-foreground" />,
         color: "neutral",
         children: "express",
       },
       {
-        icon: <PostgresqlOriginal size={14} />,
+        icon: <PostgresqlOriginal size={12} />,
         color: "violet",
         children: "postgreSQL",
       },
@@ -190,27 +190,27 @@ export const content: ContentType[] = [
     status: "",
     tags: [
       {
-        icon: <TypescriptOriginal size={16} />,
+        icon: <TypescriptOriginal size={12} />,
         color: "blue",
         children: "typescript",
       },
       {
-        icon: <ReactOriginal size={16} />,
+        icon: <ReactOriginal size={12} />,
         color: "blue",
         children: "react native",
       },
       {
-        icon: <TailwindcssOriginal size={16} />,
+        icon: <TailwindcssOriginal size={12} />,
         color: "blue",
         children: "tailwindCSS",
       },
       {
-        icon: <Css3Original size={16} />,
+        icon: <Css3Original size={12} />,
         color: "blue",
         children: "css",
       },
       {
-        icon: <FigmaOriginal size={14} />,
+        icon: <FigmaOriginal size={12} />,
         color: "violet",
         children: "figma",
       },

@@ -6,7 +6,7 @@ function About({ className }: { className: string }) {
   return (
     <div id="about" className={cn("flex gap-16 flex-col", className)}>
       <Header text={"About me"} align={"center"} />
-      <div className="flex justify-center h-[28vh] pt-4">
+      <div className="flex justify-center xl:h-[28vh] pt-4 w-full">
         <AnimatedCardVariant1 />
       </div>
       {/* <div className="text-lg max-w-[50vw] m-auto text-center">

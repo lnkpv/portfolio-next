@@ -4,6 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --breakpoint-xs: 30rem;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-mono: var(--font-montserrat);
@@ -134,10 +135,7 @@ button > svg {
   color: var(--color-accent-yellow);
 }
 
-.arrow > svg {
-  color: var(--foreground);
-}
-
+.arrow > svg,
 .themeButton > svg {
   color: var(--foreground);
 }

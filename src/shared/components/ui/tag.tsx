@@ -16,7 +16,7 @@ const badgeColorVariants = {
 };
 
 const badgeSizeVariants = {
-  sm: "h-6 px-2",
+  sm: "py-0.5 px-1 lg:py-1 lg:px-2",
   md: "h-7 px-3",
   lg: "h-8 px-4",
   icon: "size-10",
@@ -30,7 +30,7 @@ const badgeRoundedVariants = {
 };
 
 export const badgesVariants = cva(
-  "inline-flex gap-2 items-center justify-center whitespace-nowrap rounded-md transition-colors",
+  "inline-flex gap-1.5 lg:gap-2 items-center justify-center whitespace-nowrap rounded-md transition-colors",
   {
     variants: {
       color: badgeColorVariants,
@@ -69,7 +69,7 @@ function Tag({
   return (
     <div
       className={cn(
-        "text-xs",
+        "text-[0.6rem] lg:text-xs tracking-tighter",
         badgesVariants({ color, rounded, size, border }),
         className
       )}

@@ -6,10 +6,12 @@ const Noise = ({
   type = "rounded",
 }: {
   className?: string;
-  type?: "rounded" | "hero" | "projects";
+  type?: "rounded" | "hero" | "projects" | "skill";
 }) => {
   const imgStyle =
-    type === "rounded"
+    type === "skill"
+      ? "h-auto w-full md:h-full md:w-auto object-cover"
+      : type === "rounded"
       ? "h-full w-auto object-cover"
       : "h-auto w-full object-cover";
   return (

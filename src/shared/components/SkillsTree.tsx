@@ -33,9 +33,9 @@ export function SkillsTree({ type }: { type: "soft" | "hard" }) {
   };
 
   return (
-    <div className="relative flex h-[80vh] w-full flex-col items-center justify-center mx-auto overflow-hidden rounded-[19px] border bg-background p-4">
+    <div className="relative flex h-[40vh] md:h-[60vh] lg:h-[740px] w-full flex-col items-center justify-center mx-auto overflow-hidden rounded-[19px] border bg-background p-4">
       <Tree
-        className="h-full w-full"
+        className="h-full w-full text-sm sm:text-[1rem]"
         initialExpandedItems={type === "soft" ? softExpId : hardExpId}
       >
         {type === "soft"

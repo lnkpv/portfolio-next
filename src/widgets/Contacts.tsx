@@ -15,8 +15,8 @@ function Contacts({ className }: { className: string }) {
         {`I'm always open to discussing new opportunities, collaborations, or just
         chatting about interesting projects.`}
       </div> */}
-      <div className="relative max-w-[60vw]">
-        <div className="flex justify-center absolute top-0 left-1/2 -translate-x-1/2 z-50">
+      <div className="relative w-full">
+        <div className="flex justify-center absolute top-3 sm:top-5 md:top-0 left-1/2 -translate-x-1/2 z-50">
           <CircleImage type="contacts" />
         </div>
         <div className="pt-28">
@@ -28,13 +28,18 @@ function Contacts({ className }: { className: string }) {
               secondColor: "rgba(172, 144, 11, 0.5)",
             }}
           >
-            <div className="p-10 bg-background rounded-[20px] flex justify-center w-[60vw] gap-8">
-              <div className="flex flex-col gap-4 w-2/7">
+            <div className="px-2 py-4 md:p-6 lg:p-10 bg-background rounded-[20px] flex justify-center gap-2 md:gap-8">
+              <div className="flex flex-col gap-2 md:gap-4 w-2/7">
                 <Link href="https://github.com/lnkpv">
                   <MyButton
                     text="github"
                     iconLeft={
-                      <GithubOriginal size={20} strokeWidth={1.5} id="github" />
+                      <GithubOriginal
+                        size=""
+                        strokeWidth={1.5}
+                        id="github"
+                        className="size-3 md:size-6"
+                      />
                     }
                   />
                 </Link>
@@ -43,9 +48,8 @@ function Contacts({ className }: { className: string }) {
                     text="@lnkpvv"
                     iconLeft={
                       <IconBrandTelegram
-                        size={20}
                         strokeWidth={1.5}
-                        className="p-0"
+                        className="p-0 size-3 md:size-6"
                       />
                     }
                   />
@@ -54,20 +58,21 @@ function Contacts({ className }: { className: string }) {
                   <MyButton
                     text="email&nbsp;me"
                     iconLeft={
-                      <Mail size={20} strokeWidth={1.5} className="p-0" />
+                      <Mail
+                        strokeWidth={1.5}
+                        className="p-0 size-3 md:size-6"
+                      />
                     }
                   />
                 </Link>
               </div>
-              <div className="text-center flex flex-col gap-4 justify-center w-3/7 pt-4">
-                <div className="text-4xl font-semibold">
+              <div className="text-center flex flex-col gap-2 md:gap-4 justify-center w-3/7 pt-4">
+                <div className="text-[1rem] sm:text-2xl md:text-4xl font-semibold">
                   Get&nbsp;in&nbsp;touch
                 </div>
                 <div className="w-2/5 mx-auto border-accent-yellow/40 border-t-2 border-dotted mt-2"></div>
-                <div className="text-sm text-foreground/80 font-light">
-                  {"Let's work together to bring"}
-                  <br />
-                  your vision to life
+                <div className="text-[0.6rem] sm:text-xs md:text-sm text-foreground/80 font-light">
+                  {"Let's work together to bring your vision to life"}
                   {/* <code className="tracking-tighter leading-none text-foreground/70 border-[1px] border-accent-purple/40 rounded-sm bg-accent-purple/20 px-3 py-0.5">
                     your vision
                   </code>{" "} */}
@@ -76,16 +81,15 @@ function Contacts({ className }: { className: string }) {
                   </span> */}
                 </div>
               </div>
-              <div className="flex flex-col gap-4 w-2/7">
+              <div className="flex flex-col gap-2 md:gap-4 w-2/7">
                 <Link href="https://my-gradients.vercel.app/">
                   <MyButton
                     text="gradients"
                     align="text-center"
                     iconRight={
                       <ArrowUpRight
-                        size={28}
                         strokeWidth={1.5}
-                        className="p-0 -my-2"
+                        className="p-0 -my-2 md:my-0 size-3 md:size-6"
                       />
                     }
                   />
@@ -96,9 +100,8 @@ function Contacts({ className }: { className: string }) {
                     align="text-center"
                     iconRight={
                       <ArrowUpRight
-                        size={28}
                         strokeWidth={1.5}
-                        className="p-0 -my-2"
+                        className="p-0 -my-2 md:my-0 size-3 md:size-6"
                       />
                     }
                   />
@@ -109,9 +112,8 @@ function Contacts({ className }: { className: string }) {
                     align="text-center"
                     iconRight={
                       <ArrowUpRight
-                        size={28}
                         strokeWidth={1.5}
-                        className="p-0 -my-2"
+                        className="p-0 -my-2 md:my-0 size-3 md:size-6"
                       />
                     }
                   />

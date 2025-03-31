@@ -24,14 +24,21 @@ function MyButton({
       className={cn(
         "flex items-center justify-between ",
         size === "large"
-          ? "pl-6 pr-4 py-3 gap-4"
+          ? "px-2 sm:px-4 md:pl-6 py-2 sm:py-3 gap-1 md:gap-4"
           : size === "small"
-          ? "py-2 px-4 text-sm hidden md:flex gap-1.5"
+          ? "py-2 px-2 text-sm flex gap-1.5"
           : "py-2 px-4 gap-4"
       )}
     >
       {iconLeft}
-      <div className={cn("grow-1", align)}>{text}</div>
+      <div
+        className={cn(
+          "grow-1 text-[0.6rem] sm:text-xs md:text-[0.9rem]",
+          align
+        )}
+      >
+        {text}
+      </div>
       {iconRight}
     </div>
   );
