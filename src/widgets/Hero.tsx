@@ -106,7 +106,7 @@ const Hero = ({ className }: { className: string }) => {
           <Image
             width={592}
             height={592}
-            className="object-cover w-full h-auto"
+            className="object-cover w-auto h-full xs:w-full xs:h-auto"
             src="/bg1.webp"
             alt="lnkpv's photo"
           />
