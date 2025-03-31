@@ -44,7 +44,7 @@ export const MainMenusGradientCard = ({
         ref={parentRef}
       >
         {background && (
-          <Noise className="overflow-clip rounded-2xl" type={"projects"} />
+          <Noise className={"overflow-clip rounded-2xl"} type={"projects"} />
         )}
 
         <div className="absolute h-full w-full overflow-hidden rounded-2xl -z-[1]">

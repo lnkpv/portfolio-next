@@ -19,7 +19,7 @@ function Contacts({ className }: { className: string }) {
         <div className="flex justify-center absolute top-3 sm:top-5 md:top-0 left-1/2 -translate-x-1/2 z-50">
           <CircleImage type="contacts" />
         </div>
-        <div className="pt-28">
+        <div className="pt-28 pb-2">
           <NeonGradientCard
             type="contacts"
             borderSize={1}

@@ -37,53 +37,53 @@ function Marquee() {
           strokeWidth={2}
         />
       </VelocityScroll>
-      <div className="text-[0.6rem] font-light tracking-widest lowercase lg:hidden flex items-center">
+      <div className="text-[0.6rem] font-light tracking-widest lowercase lg:hidden flex items-center justify-evenly w-full">
         <div className="text-center">attention&nbsp;to&nbsp;details</div>
         <Asterisk
-          className="text-accent-yellow size-4 px-0.5"
+          className="text-accent-yellow size-4 px-0.5 min-w-[20px]"
           strokeWidth={2}
         />
         <div className="text-center">pixel&#8209;perfect&nbsp;design</div>
         <Asterisk
-          className="text-accent-purple size-4 px-0.5"
+          className="text-accent-purple size-4 px-0.5 min-w-[20px]"
           strokeWidth={2}
         />
         <div className="text-center">performance&#8209;driven&nbsp;code</div>
         <Asterisk
-          className="text-accent-yellow size-4 px-0.5"
+          className="text-accent-yellow size-4 px-0.5 min-w-[20px]"
           strokeWidth={2}
         />
         <div className="text-center">digital&nbsp;solutions</div>
         <Asterisk
-          className="text-accent-purple size-4 px-0.5"
+          className="text-accent-purple size-4 px-0.5 min-w-[20px]"
           strokeWidth={2}
         />
       </div>
-      <div className="text-[0.6rem] font-light tracking-widest lowercase lg:hidden flex items-center">
+      <div className="text-[0.6rem] font-light tracking-widest lowercase lg:hidden flex items-center justify-evenly w-full">
         <div className="text-center">performance&#8209;driven&nbsp;code</div>
         <Asterisk
-          className="text-accent-purple size-4 px-0.5"
+          className="text-accent-purple size-4 px-0.5 min-w-[20px]"
           strokeWidth={2}
         />
         <div className="text-center">digital&nbsp;solutions</div>
         <Asterisk
-          className="text-accent-yellow size-4 px-0.5"
+          className="text-accent-yellow size-4 px-0.5 min-w-[20px]"
           strokeWidth={2}
         />
         <div className="text-center">attention&nbsp;to&nbsp;details</div>
         <Asterisk
-          className="text-accent-purple size-4 px-0.5"
+          className="text-accent-purple size-4 px-0.5 min-w-[20px]"
           strokeWidth={2}
         />
         <div className="text-center">pixel&#8209;perfect&nbsp;design</div>
         <Asterisk
-          className="text-accent-yellow size-4 px-0.5"
+          className="text-accent-yellow size-4 px-0.5 min-w-[20px]"
           strokeWidth={2}
         />
       </div>
 
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
+      <div className="hidden lg:block pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
+      <div className="hidden lg:block pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import { cn } from "@/shared/lib/utils";
 import { UserRound } from "lucide-react";
 import { ReactNode } from "react";
-import { NeonGradientCard } from "./magicui/neon-gradient-card";
+import { MainMenusGradientCard } from "./ui/gradient-card";
 import { BookTextIcon } from "./ui/icons/book-text";
 import { CoffeeIcon } from "./ui/icons/coffee";
 import { FigmaIcon } from "./ui/icons/figma";
@@ -177,7 +177,6 @@ function Card({
   icon,
   content,
   className,
-  id,
 }: Readonly<{
   title: string;
   description: string;
@@ -189,23 +188,18 @@ function Card({
   return (
     <div
       className={cn(
-        "group transform-gpu transition-all duration-300 w-[220px] h-[230px] xl:w-[220px] xl:h-[230px]",
+        "group transform-gpu transition-all duration-300 w-[220px] h-[215px] xl:w-[220px] xl:h-[215px]",
         className
       )}
     >
-      <NeonGradientCard
-        className="relative flex flex-col justify-between transform-gpu transition-all rounded-[20px]"
-        borderSize={1}
-        neonColors={{
-          firstColor:
-            id % 2 === 0 ? "rgba(70, 3, 139, 0.5)" : "rgba(172, 144, 11, 0.5)",
-          secondColor:
-            id % 2 === 0 ? "rgba(172, 144, 11, 0.5)" : "rgba(70, 3, 139, 0.5)",
-        }}
+      <MainMenusGradientCard
+        background={true}
+        type="button"
+        className="relative flex flex-col justify-between transform-gpu transition-all rounded-2xl h-full"
       >
-        <div className="px-4 py-4 bg-background h-full overflow-clip rounded-[20px] ">
+        <div className="px-4 py-4 h-full overflow-clip rounded-2xl ">
           <div className="pointer-events-none z-10 w-full flex transform-gpu flex-col gap-1 transition-all duration-400 group-hover:-translate-y-10">
-            <div className="pointer-events-auto transform-gpu transition-all group-hover:-mb-8 h-[130px] text-neutral-200 tracking-tighter group-hover:text-neutral-400 dark:text-neutral-700 dark:group-hover:text-neutral-400 ">
+            <div className="pointer-events-auto transform-gpu transition-all group-hover:-mb-8 h-[130px] tracking-tighter ">
               {icon}
             </div>
             <div className="text-accent-yellow text-xs mt-2">{description}</div>
@@ -213,11 +207,11 @@ function Card({
               {title}
             </div>
           </div>
-          <div className="text-xs text-foreground/60 leading-[1.1] pointer-events-none absolute bottom-6 flex w-5/6 translate-y-7 transform-gpu flex-row items-center opacity-0 transition-all duration-200 group-hover:translate-y-2 group-hover:opacity-100">
+          <div className="text-xs text-foreground/60 leading-[1.1] pointer-events-none absolute bottom-5 flex w-5/6 translate-y-7 transform-gpu flex-row items-center opacity-0 transition-all duration-200 group-hover:translate-y-2 group-hover:opacity-100">
             {content}
           </div>
         </div>
-      </NeonGradientCard>
+      </MainMenusGradientCard>
     </div>
   );
 }
