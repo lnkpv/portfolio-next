@@ -194,7 +194,7 @@ function Card({
       )}
     >
       <NeonGradientCard
-        className="relative flex flex-col justify-between transform-gpu transition-all"
+        className="relative flex flex-col justify-between transform-gpu transition-all rounded-[20px]"
         borderSize={1}
         neonColors={{
           firstColor:

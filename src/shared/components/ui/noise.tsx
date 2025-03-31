@@ -25,8 +25,8 @@ const Noise = ({
       <Image
         src="/noise.svg"
         alt="noise"
-        width={300}
-        height={300}
+        width={100}
+        height={100}
         className={imgStyle}
       ></Image>
     </div>

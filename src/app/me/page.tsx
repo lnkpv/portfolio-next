@@ -9,7 +9,7 @@ import Skills from "@/widgets/Skills";
 
 export default function Home() {
   return (
-    <div className="bg-background">
+    <div className="bg-background overflow-x-clip">
       <NavBar />
       <div className="flex w-full flex-col gap-30 xl:gap-48">
         <Hero className="-mb-[10vh] text-white" />

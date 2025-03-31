@@ -11,6 +11,7 @@ function Skills({ className }: { className: string }) {
         <NeonGradientCard
           type="skill"
           className="max-w-md items-center justify-center text-center mx-auto"
+          borderRadius={20}
           borderSize={1}
           neonColors={{
             firstColor: "rgba(70, 3, 139, 0.5)",
@@ -23,6 +24,7 @@ function Skills({ className }: { className: string }) {
           type="skill"
           className="max-w-md items-center justify-center text-center mx-auto"
           borderSize={1}
+          borderRadius={20}
           neonColors={{
             firstColor: "rgba(172, 144, 11, 0.5)",
             secondColor: "rgba(70, 3, 139, 0.5)",

@@ -109,10 +109,7 @@ export function VelocityScroll({
 }: VelocityScrollProps) {
   return (
     <div
-      className={cn(
-        "relative w-full text-4xl font-bold md:text-7xl md:leading-[5rem]",
-        className
-      )}
+      className={cn("relative w-full font-bold md:leading-[5rem]", className)}
       {...props}
     >
       {Array.from({ length: numRows }).map((_, i) => (
