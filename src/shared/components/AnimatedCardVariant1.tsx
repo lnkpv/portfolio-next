@@ -22,12 +22,12 @@ const data: CardType[] = [
   {
     title: "Education",
     icon: (
-      <div className="transform-gpu text-xl h-full cursor-pointer transition-all group-hover:scale-50 duration-300">
-        <div className="flex h-full w-full items-center justify-center relative px-8 border-dotted rounded-xl border-2 transition-colors border-accent-purple text-accent-yellow group-hover:text-accent-yellow/90">
+      <div className="transform-gpu text-xl h-full cursor-pointer transition-all group-hover:scale-50 group-focus:scale-50 duration-300">
+        <div className="flex h-full w-full items-center justify-center relative px-8 border-dotted rounded-xl border-2 transition-colors border-accent-purple text-accent-yellow group-hover:text-accent-yellow/90 group-focus:text-accent-yellow/90">
           <FilePenLineIcon size={48} />
           <CoffeeIcon
             size={48}
-            className="text-foreground/90 group-hover:text-foreground/80"
+            className="text-foreground/90 group-hover:text-foreground/80 group-focus:text-foreground/80"
           />
           <BookTextIcon size={48} />
         </div>
@@ -44,28 +44,28 @@ const data: CardType[] = [
   {
     title: "Creativity",
     icon: (
-      <div className="transform-gpu text-xl h-full cursor-pointer transition-all group-hover:scale-[0.6] duration-300">
+      <div className="transform-gpu text-xl h-full cursor-pointer transition-all group-hover:scale-[0.6] group-focus:scale-[0.6] duration-300">
         <div className="flex h-full w-full items-center justify-center relative">
           <SparklesIcon
             size={36}
-            className="absolute top-4 left-12 -rotate-12 text-accent-yellow group-hover:text-accent-yellow/90"
+            className="absolute top-4 left-12 -rotate-12 text-accent-yellow group-hover:text-accent-yellow/90 group-focus:text-accent-yellow/90"
           />
           <SparklesIcon
             size={28}
-            className="absolute top-11 right-8 rotate-12 text-accent-yellow group-hover:text-accent-yellow/90"
+            className="absolute top-11 right-8 rotate-12 text-accent-yellow group-hover:text-accent-yellow/90 group-focus:text-accent-yellow/90"
           />
           <SparklesIcon
             size={32}
-            className="absolute top-4 right-12 rotate-12 text-accent-purple group-hover:text-accent-purple/90"
+            className="absolute top-4 right-12 rotate-12 text-accent-purple group-hover:text-accent-purple/90 group-focus:text-accent-purple/90"
           />
           <SparklesIcon
             size={28}
-            className="absolute top-13 left-7 rotate-6 text-accent-purple group-hover:text-accent-purple/90"
+            className="absolute top-13 left-7 rotate-6 text-accent-purple group-hover:text-accent-purple/90 group-focus:text-accent-purple/90"
           />
           <UserRound
             size={70}
             strokeWidth={1}
-            className="mt-10 text-foreground/90 group-hover:text-foreground/80"
+            className="mt-10 text-foreground/90 group-hover:text-foreground/80 group-focus:text-foreground/80"
           />
         </div>
       </div>
@@ -80,29 +80,29 @@ const data: CardType[] = [
   {
     title: "Technology",
     icon: (
-      <div className="cursor-pointer transform-gpu transition-all group-hover:scale-50 duration-300 leading-none justify-center flex border-dotted rounded-xl border-2 border-accent-purple text-foreground/90 group-hover:text-foreground/80">
+      <div className="cursor-pointer transform-gpu transition-all group-hover:scale-50 group-focus:scale-50 duration-300 leading-none justify-center flex border-dotted rounded-xl border-2 border-accent-purple text-foreground/90 group-hover:text-foreground/80 group-focus:text-foreground/80">
         <div className="text-lg font-medium flex flex-col py-2 transition-transform ">
           <div className="transform hover:scale-125 transition-transform">
             eat
-            <span className="text-accent-yellow group-hover:text-accent-yellow/90">
+            <span className="text-accent-yellow group-hover:text-accent-yellow/90 group-focus:text-accent-yellow/90">
               ();
             </span>
           </div>
           <div className="transform hover:scale-125 transition-transform">
             code
-            <span className="text-accent-yellow group-hover:text-accent-yellow/90">
+            <span className="text-accent-yellow group-hover:text-accent-yellow/90 group-focus:text-accent-yellow/90">
               ();
             </span>
           </div>
           <div className="transform hover:scale-125 transition-transform">
             sleep
-            <span className="text-accent-yellow group-hover:text-accent-yellow/90">
+            <span className="text-accent-yellow group-hover:text-accent-yellow/90 group-focus:text-accent-yellow/90">
               ();
             </span>
           </div>
           <div className="transform hover:scale-125 transition-transform">
             repeat
-            <span className="text-accent-yellow group-hover:text-accent-yellow/90">
+            <span className="text-accent-yellow group-hover:text-accent-yellow/90 group-focus:text-accent-yellow/90">
               ();
             </span>
           </div>
@@ -119,21 +119,21 @@ const data: CardType[] = [
   {
     title: "Design",
     icon: (
-      <div className="transform-gpu text-xl h-full cursor-pointer transition-all group-hover:scale-[0.6] duration-300 text-accent-yellow group-hover:text-accent-yellow/90">
+      <div className="transform-gpu text-xl h-full cursor-pointer transition-all group-hover:scale-[0.6] group-focus:scale-[0.6] duration-300 text-accent-yellow group-hover:text-accent-yellow/90 group-focus:text-accent-yellow/90">
         <div className="flex h-full w-full items-center justify-center relative">
           <SquarePenIcon
             size={40}
-            className="absolute top-16 right-15 text-accent-purple group-hover:text-accent-purple/90"
+            className="absolute top-16 right-15 text-accent-purple group-hover:text-accent-purple/90 group-focus:text-accent-purple/90"
           />
           <SettingsIcon size={40} className="absolute top-16 right-3" />
           <PenToolIcon size={40} className="absolute top-3 right-15" />
           <LayersIcon
             size={40}
-            className="absolute top-3 right-3 text-accent-purple group-hover:text-accent-purple/90"
+            className="absolute top-3 right-3 text-accent-purple group-hover:text-accent-purple/90 group-focus:text-accent-purple/90"
           />
           <FigmaIcon
             size={80}
-            className="mr-28 text-foreground/90 group-hover:text-foreground/80"
+            className="mr-28 text-foreground/90 group-hover:text-foreground/80 group-focus:text-foreground/80"
           />
         </div>
       </div>
@@ -198,8 +198,8 @@ function Card({
         className="relative flex flex-col justify-between transform-gpu transition-all rounded-2xl h-full"
       >
         <div className="px-4 py-4 h-full overflow-clip rounded-2xl ">
-          <div className="pointer-events-none z-10 w-full flex transform-gpu flex-col gap-1 transition-all duration-400 group-hover:-translate-y-10">
-            <div className="pointer-events-auto transform-gpu transition-all group-hover:-mb-8 h-[130px] tracking-tighter ">
+          <div className="pointer-events-auto z-10 w-full flex transform-gpu flex-col gap-1 transition-all duration-400 group-hover:-translate-y-10 group-focus:-translate-y-10">
+            <div className="pointer-events-auto transform-gpu transition-all group-hover:-mb-8 group-focus:-mb-8 h-[130px] tracking-tighter ">
               {icon}
             </div>
             <div className="text-accent-yellow text-xs mt-2">{description}</div>
@@ -207,7 +207,7 @@ function Card({
               {title}
             </div>
           </div>
-          <div className="text-xs text-foreground/60 leading-[1.1] pointer-events-none absolute bottom-5 flex w-5/6 translate-y-7 transform-gpu flex-row items-center opacity-0 transition-all duration-200 group-hover:translate-y-2 group-hover:opacity-100">
+          <div className="text-xs text-foreground/60 leading-[1.1] pointer-events-auto absolute bottom-5 flex w-5/6 translate-y-7 transform-gpu flex-row items-center opacity-0 transition-all duration-200 group-hover:translate-y-2 group-focus:translate-y-2 group-hover:opacity-100 group-focus:opacity-100">
             {content}
           </div>
         </div>

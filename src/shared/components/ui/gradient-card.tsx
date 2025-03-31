@@ -50,7 +50,7 @@ export const MainMenusGradientCard = ({
         <div className="absolute h-full w-full overflow-hidden rounded-2xl -z-[1]">
           <div
             className={cn(
-              "-translate-x-1/2 -translate-y-1/2 absolute transform-gpu h-full rounded-full transition-transform duration-500 group-hover:scale-[3]",
+              "hidden lg:block -translate-x-1/2 -translate-y-1/2 absolute transform-gpu h-full rounded-full transition-transform duration-500 group-hover:scale-[3]",
               mouse.elementX === null || mouse.elementY === null
                 ? "opacity-0"
                 : "opacity-100"
@@ -76,7 +76,7 @@ export const MainMenusGradientCard = ({
 
   return (
     <div
-      className="group relative transform-gpu rounded-[20px] h-[230px] md:h-[250px] lg:h-[300px] bg-foreground/10 transition-transform hover:scale-[1.01]"
+      className="relative transform-gpu rounded-[20px] h-[230px] md:h-[250px] lg:h-[300px] bg-foreground/10 transition-transform hover:scale-[1.01]"
       ref={parentRef}
     >
       <Noise className="overflow-clip rounded-[20px]" type={"projects"} />
