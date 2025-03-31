@@ -1,13 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { cn } from "@/shared/lib/utils";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@radix-ui/react-dropdown-menu";
-import { Menu, SquareArrowOutUpRight } from "lucide-react";
+import { SquareArrowOutUpRight } from "lucide-react";
 import {
   AnimatePresence,
   motion,
@@ -70,7 +64,7 @@ export const FloatingNav = ({
         )}
       >
         <div className="px-4 font-semibold text-lg grow-1 lg:grow-0">lnkpv</div>
-        <DropdownMenu>
+        {/* <DropdownMenu>
           <DropdownMenuTrigger asChild={true}>
             <button
               type="button"
@@ -88,7 +82,7 @@ export const FloatingNav = ({
               </DropdownMenuItem>
             ))}
           </DropdownMenuContent>
-        </DropdownMenu>
+        </DropdownMenu> */}
         <div className="hidden lg:flex max-w-fit grow-1 items-center justify-center">
           {navItems.map((navItem: any, idx: number) => (
             <Link
