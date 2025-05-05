@@ -44,7 +44,7 @@ const Hero = ({ className }: { className: string }) => {
       className: "",
     },
     {
-      text: "frontend",
+      text: "frontend/fullstack",
       className: "text-accent-yellow font-semibold",
     },
     {
@@ -62,20 +62,8 @@ const Hero = ({ className }: { className: string }) => {
       className: "text-accent-yellow font-semibold",
     },
     {
-      text: "designer",
+      text: "designer.",
       className: "text-accent-yellow font-semibold",
-    },
-    {
-      text: "based",
-      className: "",
-    },
-    {
-      text: "in",
-      className: "",
-    },
-    {
-      text: "Moscow.",
-      className: "",
     },
   ];
 
